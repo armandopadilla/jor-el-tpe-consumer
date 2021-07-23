@@ -1,0 +1,28 @@
+{
+  "name": "jor-el-tpe-consumer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-sns": "^3.22.0",
+    "dotenv": "^10.0.0",
+    "mysql2": "^2.2.5",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.80",
+    "@types/node": "^16.4.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
+    "eslint": "^7.31.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2",
+    "ts-node": "^10.1.0"
+  }
+}
