@@ -5,6 +5,8 @@
 import * as mysql from 'mysql2/promise';
 import { SNSHandler } from 'aws-lambda';
 
+import SubsystemStrat, { SUBSYSTEM } from './strategies/SubsystemStrat';
+
 // ENV
 const DB_HOST = process.env.DB_HOST;
 const DB_USERNAME = process.env.DB_USERNAME;
@@ -39,10 +41,10 @@ const handler: SNSHandler = async (event, context, cb) => {
 
         // Send out messages into the subsystem
         // 1. Summary Extractor
-        await SubsystemStrategy.strategy(SUBSYSTEM.SUMMARY_EXTRACT, '1', rawInput);
+        await SubsystemStrat.strategy(SUBSYSTEM.SUMMARY_EXTRACT, '1', rawInput);
         console.log('successfully triggered SUMMARY EXTRACT strategy....');
         // 2. AWS Comprehend
-        await SubsystemStrategy.strategy(SUBSYSTEM.AWS_COMPREHEND, '1', rawInput);
+        await SubsystemStrat.strategy(SUBSYSTEM.AWS_COMPREHEND, '1', rawInput);
         console.log('successfully triggered AWS COMPREHEND strategy....');
 
         // Done
